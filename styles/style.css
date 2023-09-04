@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --clr-sky-blue: #8ecae6ff;
+  --clr-blue-green: #219ebcff;
+  --clr-brussian-blue: #023047ff;
+  --clr-selective-yellow: #ffb703ff;
+  --clr-ut-orange: #fb8500ff;
+  --light-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+body {
+  font-family: "Anton", sans-serif;
+  min-width: 100vh;
+  min-height: 100vh;
+  /* min-height: 100vh; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* background-color: #0b676b; */
+}
+.flex-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  /* height: 4rem; */
+  height: auto;
+  background-color: #2a2a72;
+  padding: 0.8rem 4rem 0.8rem 4rem;
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+  /* background-color: yellow; */
+}
+.nav-elements {
+  width: 93%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-span {
+  font-family: "Anton";
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  align-self: center;
+}
+h4 {
+  color: rgb(35, 37, 40);
+  font-weight: 400;
+}
+.nav-btn {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #009ffd;
+  background: transparent;
+  color: #009ffd;
+  cursor: pointer;
+}
+.nav-btn:hover {
+  color: #2a2a72;
+  background: #009ffd;
+}
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f3f3f3;
+}
+.for-h1 {
+  padding-top: 2rem;
+}
+.for-h1 h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #2a2a72;
+}
+.for-h1 h1 span {
+  font-size: 40px;
+  font-weight: 400;
+  color: black;
+}
+.row-container {
+  padding: 2rem;
+  width: 100%;
+  /* height: 10rem; */
+  height: auto;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  background-color: white;
+  overflow: hidden;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+}
+.row:hover {
+  box-shadow: var(--light-shadow);
+}
+.small-box {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: #009ffd;
+  transition: transform 1.2s ease-in-out;
+  transform: translate(150%, 150%);
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.1rem;
+  cursor: pointer;
+}
+.small-box .fa-cart-plus {
+  font-size: 1.5rem;
+  color: white;
+}
+.small-box .fa-cart-plus:hover {
+  transition: transform 1.5s ease-in-out;
+  color: #2a2a72;
+}
+.row .small-box {
+  align-self: flex-end;
+}
+.row:hover .small-box {
+  transform: translate(0, 0);
+}
+.title-row {
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 15rem;
+  height: 3rem;
+  background-color: white;
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+.title-row:hover {
+  background-color: #f7f7f7;
+  transition: transform 1.2s ease-in-out;
+}
+.main-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.main-img-container img {
+  width: 100%;
+  cursor: pointer;
+}
+/* .main-img-container img:hover {
+  transform: scale(1.2);
+  transition: transform 1.2s ease-in-out;
+} */
+.main-img-container .productTwo {
+  width: 85%;
+}
+.main-img-container .productThree {
+  width: 85%;
+}
+.main-img-container .productSix {
+  width: 80%;
+}
+.blueclr {
+  font-weight: 400;
+  color: #2a2a72;
+}
+.currencyFont {
+  font-size: 1.3rem;
+}
+.row:hover .main-img-container img,
+.small-box:hover ~ .main-img-container img {
+  transform: scale(1.2);
+  transition: transform 1.2s ease-in-out;
+}
+.our {
+  color: rgb(35, 37, 40);
+}
