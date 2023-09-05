@@ -44,7 +44,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:Samsung S7";
           madebyDescription.innerText = "MADE BY: SAMSUNG";
           priceDescription.innerText = "Price : $16";
-          imageDescription.src = "/images/product-2.png";
+          imageDescription.src = "./images/product-2.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -53,7 +53,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:HTC 10 - Black";
           madebyDescription.innerText = "MADE BY: HTC";
           priceDescription.innerText = "Price : $8";
-          imageDescription.src = "/images/product-3.png";
+          imageDescription.src = "./images/product-3.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -62,7 +62,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:HTC 10 - White";
           madebyDescription.innerText = "MADE BY: HTC";
           priceDescription.innerText = "Price : $18";
-          imageDescription.src = "/images/product-4.png";
+          imageDescription.src = "./images/product-4.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -71,7 +71,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:HTC Desire 626s";
           madebyDescription.innerText = "MADE BY: HTC";
           priceDescription.innerText = "Price : $24";
-          imageDescription.src = "/images/product-5.png";
+          imageDescription.src = "./images/product-5.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -80,7 +80,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:Vintage Iphone";
           madebyDescription.innerText = "MADE BY: APPLE";
           priceDescription.innerText = "Price : $17";
-          imageDescription.src = "/images/product-6.png";
+          imageDescription.src = "./images/product-6.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -89,7 +89,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:Iphone 7";
           madebyDescription.innerText = "MADE BY: APPLE";
           priceDescription.innerText = "Price : $30";
-          imageDescription.src = "/images/product-7.png";
+          imageDescription.src = "./images/product-7.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -98,7 +98,7 @@ function handleProductClick() {
           modelDescription.innerText = "Model:Smashed Iphone";
           madebyDescription.innerText = "MADE BY: APPLE";
           priceDescription.innerText = "Price : $2";
-          imageDescription.src = "/images/product-8.png";
+          imageDescription.src = "./images/product-8.png";
           heroPage.style.display = "none";
           descriptionPage.style.display = "block";
           break;
@@ -140,7 +140,7 @@ for (const smallCartBtn of smallCartBtns) {
     switch (productId) {
       case "1":
         // Handle the "addToCart" behavior here.
-        overlayImage.src = "/images/product-1.png";
+        overlayImage.src = "./images/product-1.png";
         overlayTitle.innerText = "Google Pixel - Black";
         overlayPrice.innerText = "Price : $ 10";
         overlaySection.style.display = "flex";
@@ -150,7 +150,7 @@ for (const smallCartBtn of smallCartBtns) {
 
       case "2":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-2.png";
+        overlayImage.src = "./images/product-2.png";
         overlayTitle.innerText = "Samsung S7";
         overlayPrice.innerText = "Price : $ 16";
         overlaySection.style.display = "flex";
@@ -159,7 +159,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "3":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-3.png";
+        overlayImage.src = "./images/product-3.png";
         overlayTitle.innerText = "HTC 10 - Black";
         overlayPrice.innerText = "Price : $ 8";
         overlaySection.style.display = "flex";
@@ -168,7 +168,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "4":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-4.png";
+        overlayImage.src = "./images/product-4.png";
         overlayTitle.innerText = "HTC 10 - White";
         overlayPrice.innerText = "Price : $ 18";
         overlaySection.style.display = "flex";
@@ -177,7 +177,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "5":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-5.png";
+        overlayImage.src = "./images/product-5.png";
         overlayTitle.innerText = "HTC Desire 626s";
         overlayPrice.innerText = "Price : $ 24";
         overlaySection.style.display = "flex";
@@ -186,7 +186,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "6":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-6.png";
+        overlayImage.src = "./images/product-6.png";
         overlayTitle.innerText = "Vintage Iphone";
         overlayPrice.innerText = "Price : $ 17";
         overlaySection.style.display = "flex";
@@ -195,7 +195,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "7":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-7.png";
+        overlayImage.src = "./images/product-7.png";
         overlayTitle.innerText = "Iphone 7";
         overlayPrice.innerText = "Price : $ 30";
         overlaySection.style.display = "flex";
@@ -204,7 +204,7 @@ for (const smallCartBtn of smallCartBtns) {
         break;
       case "8":
         // Handle the "removeFromCart" behavior here.
-        overlayImage.src = "/images/product-8.png";
+        overlayImage.src = "./images/product-8.png";
         overlayTitle.innerText = "Smashed Iphone";
         overlayPrice.innerText = "Price : $ 2";
         overlaySection.style.display = "flex";
