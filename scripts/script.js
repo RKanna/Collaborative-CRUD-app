@@ -111,6 +111,7 @@ handleProductClick();
 function homepage() {
   heroPage.style.display = "flex";
   descriptionPage.style.display = "none";
+  cartSection.style.display = "none";
 }
 function homepageOverlay() {
   overlaySection.style.display = "none";
@@ -214,3 +215,14 @@ for (const smallCartBtn of smallCartBtns) {
     }
   });
 }
+
+const cartSection = document.getElementById("your-cart");
+const navigationButton = document.getElementById("nav-btn");
+
+cartSection.style.display = "none";
+
+navigationButton.addEventListener("click", () => {
+  cartSection.style.display = "flex";
+  heroPage.style.display = "none";
+  descriptionPage.style.display = "none";
+});
