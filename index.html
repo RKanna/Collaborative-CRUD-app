@@ -51,7 +51,7 @@
               <img src="./images/product-1.png" alt="phone" />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="1">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -71,7 +71,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="2">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -91,7 +91,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="3">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -111,7 +111,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="4">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -134,7 +134,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="5">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -154,7 +154,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="6">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -174,7 +174,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="7">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -194,7 +194,7 @@
               />
             </div>
             <div class="small-box">
-              <button id="btn-small" class="btn-small">
+              <button id="btn-small" class="btn-small" data-product-id="8">
                 <i class="fas fa-cart-plus"></i>
               </button>
             </div>
@@ -208,14 +208,15 @@
       <div class="overlay-section" id="overlay-section">
         <div class="overlay">
           <div class="mobile-box">
-            <h2>Item Added To The Cart</h2>
+            <h2 id="overlayh2">Item Added To The Cart</h2>
             <img
+              id="overlayimg"
               src="./images/product-1.png"
               alt="Pixel"
               style="width: 18rem; height: 18rem"
             />
-            <h2>Google Pixel - Black</h2>
-            <p>Price : $ 10</p>
+            <h2 id="overlayh2-title">Google Pixel - Black</h2>
+            <p id="overlayprice">Price : $ 10</p>
             <div class="buttons">
               <button class="back" onclick="homepageOverlay()">
                 Back To Products
