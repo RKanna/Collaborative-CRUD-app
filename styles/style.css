@@ -315,11 +315,13 @@ h4 {
     0,
     0.3
   ); /* This sets the background color with an opacity of 0.3 (30%) */
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 130%;
+  /* width: 100%;
+  height: 130%; */
+  min-width: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,4 +347,24 @@ h4 {
 .nav-span a {
   text-decoration: none;
   color: white;
+}
+.your-cart {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.your-cart h2 {
+  font-size: 40px;
+}
+.your-cart h2 span {
+  color: #2a2a72;
+}
+.listing-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12rem;
 }
