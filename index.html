@@ -32,7 +32,9 @@
         <img src="./icons/logo.9f7e506d.svg" alt="Logo" />
       </div>
       <div class="nav-elements">
-        <span class="nav-span">Products</span>
+        <span class="nav-span"
+          ><a href="#" onclick="homepage()">Products</a></span
+        >
         <button class="nav-btn">
           <i class="fas fa-cart-plus">My Cart</i>
         </button>
@@ -49,7 +51,9 @@
               <img src="./images/product-1.png" alt="phone" />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -67,7 +71,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -85,7 +91,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -103,7 +111,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -124,7 +134,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -142,7 +154,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -160,7 +174,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -178,7 +194,9 @@
               />
             </div>
             <div class="small-box">
-              <i class="fas fa-cart-plus"></i>
+              <button id="btn-small" class="btn-small">
+                <i class="fas fa-cart-plus"></i>
+              </button>
             </div>
           </div>
           <div class="title-row">
@@ -187,19 +205,39 @@
           </div>
         </div>
       </div>
+      <div class="overlay-section" id="overlay-section">
+        <div class="overlay">
+          <div class="mobile-box">
+            <h2>Item Added To The Cart</h2>
+            <img
+              src="./images/product-1.png"
+              alt="Pixel"
+              style="width: 18rem; height: 18rem"
+            />
+            <h2>Google Pixel - Black</h2>
+            <p>Price : $ 10</p>
+            <div class="buttons">
+              <button class="back" onclick="homepageOverlay()">
+                Back To Products
+              </button>
+              <span><button class="cart">Add To Cart</button></span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="next-page-section" id="next-page">
       <!-- AbIsHeK pArT -->
-      <h1 class="title">Google Pixel - Black</h1>
+      <h1 class="title" id="title-des">Google Pixel - Black</h1>
 
       <div class="left-container">
-        <img src="./images/product-1.png" alt="no_image" />
+        <img id="img-des" src="./images/product-1.png" alt="no_image" />
       </div>
 
       <div class="right-container">
-        <h2 class="model">Model:Google Pixel - Black</h2>
-        <h3 class="developer">MADE BY: GOOGLE</h3>
-        <h1 class="price">Price : $10</h1>
+        <h2 class="model" id="model-des">Model:Google Pixel - Black</h2>
+        <h3 class="developer" id="madeby">MADE BY: GOOGLE</h3>
+        <h1 class="price" id="price-des">Price : $10</h1>
 
         <h3 class="product-info">Some Info About Product</h3>
 
@@ -218,10 +256,11 @@
         </p>
       </div>
       <div class="buttons">
-        <button class="back">Back To Products</button>
+        <button class="back" onclick="homepage()">Back To Products</button>
         <span><button class="cart">Add To Cart</button></span>
       </div>
     </section>
+
     <script src="./scripts/script.js"></script>
   </body>
 </html>
