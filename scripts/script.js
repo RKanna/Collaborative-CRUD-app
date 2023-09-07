@@ -364,19 +364,17 @@ const products = [
   },
 ];
 
-//....................................For Visibility of displayCart in Cart Area.......
-
-//......................................new new......................................
-
 function createCartRow(product) {
   const cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
   cartRow.dataset.inCart = false; // Initialize as not in cart
   cartRow.innerHTML = `
+  
     <div class="cart-item">
       <img src="${product.imageSrc}" alt="${product.name}" />
       <span class="span-title">${product.name}</span>
     </div>
+    <div class="classDiv">
     <div class="cart-price">$${product.price}</div>
     <div class="cart-quantity">
       <button class="increase-btn">+</button>
@@ -393,6 +391,8 @@ function createCartRow(product) {
     </div>
     <div class="cart-total">$${product.price * product.quantity}</div>
     <div class="cart-total-value">$0</div>
+    <section class="totalcart">
+    </div>
   `;
 
   const removeButton = cartRow.querySelector(".remove-btn");
@@ -414,11 +414,13 @@ function updateCartRow(cartRow) {
   const rowTotal = price * quantity;
 
   totalElement.textContent = `$${rowTotal.toFixed(2)}`;
+  updateSubtotals();
 }
 
 function removeCartRow(cartRow, productName) {
   cartRow.remove();
   updateCartTotal();
+  updateSubtotals();
   displayEmptyCartMessage();
   const addButton = document.querySelector(
     `#btn${products.findIndex((product) => product.name === productName) + 1}`
@@ -441,18 +443,21 @@ function updateCartTotal() {
 
     const cartTotalValue = cartRow.querySelector(".cart-total-value");
     cartTotalValue.textContent = `$${rowTotal.toFixed(2)}`;
+    updateSubtotals();
   });
 }
 
 function increaseQuantity(quantityElement) {
   let newValue = parseInt(quantityElement.value) + 1;
   quantityElement.value = newValue;
+  updateSubtotals();
 }
 
 function decreaseQuantity(quantityElement) {
   let newValue = parseInt(quantityElement.value) - 1;
   // Ensure the quantity doesn't go below 1
   quantityElement.value = Math.max(newValue, 1);
+  updateSubtotals();
 }
 
 function addClickListenersToButtons() {
@@ -465,8 +470,8 @@ function addClickListenersToButtons() {
       cartContainer.appendChild(cartRow);
       updateCartTotal();
 
-      addButton.innerText = "In Cart"; // Update the button text
-      addButton.disabled = true; // Disable the button
+      addButton.innerText = "In Cart";
+      addButton.disabled = true;
 
       cartRow.dataset.inCart = true; // Update the cart row's "In Cart" data attribute
 
@@ -509,8 +514,8 @@ function addClickListenersToButtons() {
       cartContainer.appendChild(cartRow);
       updateCartTotal();
 
-      button.innerText = "In Cart"; // Update the button text
-      button.disabled = true; // Disable the button
+      button.innerText = "In Cart";
+      button.disabled = true;
 
       cartRow.dataset.inCart = true; // Update the cart row's "In Cart" data attribute
 
@@ -562,3 +567,98 @@ const navButton = document.querySelector(".nav-btn");
 navButton.addEventListener("click", () => {
   displayEmptyCartMessage();
 });
+
+//............................dynamic html clear.............................
+
+// Flag to track whether the structure has been added
+let cartHtmlStructureAdded = false;
+
+// Function to create the dynamic HTML structure
+function createCartHtmlStructure() {
+  if (!cartHtmlStructureAdded) {
+    const dynamicHtmlTwo = document.querySelector(".dynamic-html-two");
+
+    // Create the "CLEAR CART" button
+    const clearCartButton = document.createElement("button");
+    clearCartButton.textContent = "CLEAR CART";
+    clearCartButton.classList.add("clearCart");
+
+    // Create the subtotal spans
+    const subtotalOne = document.createElement("span");
+    subtotalOne.classList.add("subtotalOne");
+    subtotalOne.textContent = `SUBTOTAL :`;
+
+    const subtotalTwo = document.createElement("span");
+    subtotalTwo.classList.add("subtotalTwo");
+    subtotalTwo.textContent = `SUBTOTAL :`;
+
+    const subtotalThree = document.createElement("span");
+    subtotalThree.classList.add("subtotalThree");
+    subtotalThree.textContent = `SUBTOTAL :`;
+
+    // Append the elements to the dynamicHtmlTwo div
+    dynamicHtmlTwo.appendChild(clearCartButton);
+    dynamicHtmlTwo.appendChild(subtotalOne);
+    dynamicHtmlTwo.appendChild(subtotalTwo);
+    dynamicHtmlTwo.appendChild(subtotalThree);
+
+    cartHtmlStructureAdded = true;
+  }
+}
+
+// Function to handle adding an item to the cart
+function addItemToCart(product) {
+  // Logic to add the item to the cart
+
+  // Call the function to create the dynamic HTML structure
+  createCartHtmlStructure();
+}
+
+// Example usage:
+const sampleProduct = {
+  name: "Sample Product",
+  price: 10,
+  quantity: 1,
+};
+
+// Simulate adding an item to the cart
+addItemToCart(sampleProduct);
+
+// Function to update the subtotals based on cart totals
+
+//...................uuuu.............................
+
+function updateSubtotals() {
+  const cartRows = document.querySelectorAll(".cart-row");
+
+  let cartTotal = 0;
+
+  cartRows.forEach((cartRow) => {
+    const totalElement = cartRow.querySelector(".cart-total");
+    const rowTotal = parseFloat(totalElement.textContent.replace("$", ""));
+    cartTotal += rowTotal;
+  });
+
+  const subtotalOne = document.querySelector(".subtotalOne");
+  const subtotalTwo = document.querySelector(".subtotalTwo");
+  const subtotalThree = document.querySelector(".subtotalThree");
+
+  // Calculate subtotals
+  const subTotalTwoValue = cartTotal * 0.1; // 10% of cart total
+  const subTotalThreeValue = cartTotal + subTotalTwoValue; // Sum of cart total and subTotalTwo
+
+  // Update the HTML elements with calculated subtotals
+  subtotalOne.textContent = `SUBTOTAL : $${cartTotal.toFixed(2)}`;
+  subtotalTwo.textContent = `SUBTOTAL : $${subTotalTwoValue.toFixed(2)}`;
+  subtotalThree.textContent = `SUBTOTAL : $${subTotalThreeValue.toFixed(2)}`;
+}
+
+function clearCart() {
+  const cartRows = document.querySelectorAll(".cart-row");
+  cartRows.forEach((cartRow) => {
+    cartRow.remove();
+  });
+  displayEmptyCartMessage();
+}
+const clearCartButton = document.querySelector(".clearCart");
+clearCartButton.addEventListener("click", clearCart);
