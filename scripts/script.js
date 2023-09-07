@@ -425,8 +425,8 @@ function removeCartRow(cartRow, productName) {
   );
 
   if (addButton) {
-    addButton.innerText = "Add to Cart"; // Update the button text
-    addButton.disabled = false; // Enable the button
+    addButton.innerText = "Add to Cart";
+    addButton.disabled = false;
   }
 }
 
