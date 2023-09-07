@@ -302,8 +302,7 @@ navigationButton.addEventListener("click", () => {
   descriptionPage.style.display = "none";
 });
 
-////...............................................NeWWWW...............................
-// Add an event listener to the remove button in each cart row
+//Main Logic Starts Here....
 
 const products = [
   {
@@ -363,11 +362,11 @@ const products = [
     quantity: 1,
   },
 ];
-
+//For creating a row using Dynamic HTML Structure
 function createCartRow(product) {
   const cartRow = document.createElement("div");
   cartRow.classList.add("cart-row");
-  cartRow.dataset.inCart = false; // Initialize as not in cart
+  cartRow.dataset.inCart = false; //Not exist Initially
   cartRow.innerHTML = `
   
     <div class="cart-item">
@@ -394,7 +393,7 @@ function createCartRow(product) {
     <section class="totalcart">
     </div>
   `;
-
+  //For Removing Cart Rows.....
   const removeButton = cartRow.querySelector(".remove-btn");
   removeButton.addEventListener("click", () => {
     removeCartRow(cartRow, product.name);
@@ -402,7 +401,7 @@ function createCartRow(product) {
 
   return cartRow;
 }
-
+//Updating price based on quantity
 function updateCartRow(cartRow) {
   const priceElement = cartRow.querySelector(".cart-price");
   const quantityElement = cartRow.querySelector(".quantity-ele");
@@ -416,7 +415,7 @@ function updateCartRow(cartRow) {
   totalElement.textContent = `$${rowTotal.toFixed(2)}`;
   updateSubtotals();
 }
-
+//Remove+update cart
 function removeCartRow(cartRow, productName) {
   cartRow.remove();
   updateCartTotal();
@@ -431,7 +430,7 @@ function removeCartRow(cartRow, productName) {
     addButton.disabled = false;
   }
 }
-
+//updating cart+helper function
 function updateCartTotal() {
   const cartRows = document.querySelectorAll(".cart-row");
 
@@ -442,7 +441,7 @@ function updateCartTotal() {
     const rowTotal = parseFloat(totalElement.textContent.replace("$", ""));
 
     const cartTotalValue = cartRow.querySelector(".cart-total-value");
-    cartTotalValue.textContent = `$${rowTotal.toFixed(2)}`;
+    cartTotalValue.textContent = `Item Total:$${rowTotal}`;
     updateSubtotals();
   });
 }
@@ -550,7 +549,7 @@ function addClickListenersToButtons() {
 }
 
 addClickListenersToButtons();
-
+//For displaying Empty Cart Message
 function displayEmptyCartMessage() {
   const cartRows = document.querySelectorAll(".cart-row");
   const emptyCartMessage = document.querySelector(".empty-cart");
@@ -568,9 +567,9 @@ navButton.addEventListener("click", () => {
   displayEmptyCartMessage();
 });
 
-//............................dynamic html clear.............................
+//............................dynamic html Two Structure.............................
 
-// Flag to track whether the structure has been added
+// set flag for initial because its added only once
 let cartHtmlStructureAdded = false;
 
 // Function to create the dynamic HTML structure
@@ -578,12 +577,12 @@ function createCartHtmlStructure() {
   if (!cartHtmlStructureAdded) {
     const dynamicHtmlTwo = document.querySelector(".dynamic-html-two");
 
-    // Create the "CLEAR CART" button
+    // clear cart btn
     const clearCartButton = document.createElement("button");
     clearCartButton.textContent = "CLEAR CART";
     clearCartButton.classList.add("clearCart");
 
-    // Create the subtotal spans
+    // for subtotal spans
     const subtotalOne = document.createElement("span");
     subtotalOne.classList.add("subtotalOne");
     subtotalOne.textContent = `SUBTOTAL :`;
@@ -596,7 +595,7 @@ function createCartHtmlStructure() {
     subtotalThree.classList.add("subtotalThree");
     subtotalThree.textContent = `SUBTOTAL :`;
 
-    // Append the elements to the dynamicHtmlTwo div
+    // Append
     dynamicHtmlTwo.appendChild(clearCartButton);
     dynamicHtmlTwo.appendChild(subtotalOne);
     dynamicHtmlTwo.appendChild(subtotalTwo);
@@ -606,27 +605,20 @@ function createCartHtmlStructure() {
   }
 }
 
-// Function to handle adding an item to the cart
 function addItemToCart(product) {
-  // Logic to add the item to the cart
-
-  // Call the function to create the dynamic HTML structure
   createCartHtmlStructure();
 }
 
-// Example usage:
 const sampleProduct = {
   name: "Sample Product",
   price: 10,
   quantity: 1,
 };
 
-// Simulate adding an item to the cart
+// simulation by using sample product
 addItemToCart(sampleProduct);
 
-// Function to update the subtotals based on cart totals
-
-//...................uuuu.............................
+//...................started mental depression.............................
 
 function updateSubtotals() {
   const cartRows = document.querySelectorAll(".cart-row");
@@ -644,8 +636,8 @@ function updateSubtotals() {
   const subtotalThree = document.querySelector(".subtotalThree");
 
   // Calculate subtotals
-  const subTotalTwoValue = cartTotal * 0.1; // 10% of cart total
-  const subTotalThreeValue = cartTotal + subTotalTwoValue; // Sum of cart total and subTotalTwo
+  const subTotalTwoValue = cartTotal * 0.1;
+  const subTotalThreeValue = cartTotal + subTotalTwoValue;
 
   // Update the HTML elements with calculated subtotals
   subtotalOne.textContent = `SUBTOTAL : $${cartTotal.toFixed(2)}`;
