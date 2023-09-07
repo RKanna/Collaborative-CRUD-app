@@ -500,6 +500,14 @@ h4 {
   border: 2px solid black;
   height: 2rem;
 }
+.cart-total-value {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 110%;
+}
+.remove-btn {
+  color: #ffa400;
+}
 
 @media screen and (max-width: 1200px) {
   .row-main {
